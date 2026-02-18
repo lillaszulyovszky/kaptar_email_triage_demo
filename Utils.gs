@@ -252,8 +252,12 @@ function createDraftReply(thread, subject, htmlBody) {
   }
 
   try {
+    // Apps Script silently drops the htmlBody if the plain-text argument is
+    // empty. Pass a stripped version as the plain-text fallback so the body
+    // is always populated regardless of the client used to view the draft.
+    var plainText = stripHtml(htmlBody);
     thread.createDraftReply(
-      '', // Plain text (empty — we provide HTML)
+      plainText,
       { htmlBody: htmlBody, subject: subject }
     );
     return true;
