@@ -1,0 +1,621 @@
+{
+  "meta": {
+    "version": "1.0",
+    "description": "60 realistic test emails for the Kaptar Coworking Space Email Triage System",
+    "categories": ["BILLING", "BOOKING", "COMPLAINT", "INFO_REQUEST", "MEMBERSHIP", "SPAM"],
+    "distribution": {
+      "BILLING": 10,
+      "BOOKING": 10,
+      "COMPLAINT": 10,
+      "INFO_REQUEST": 10,
+      "MEMBERSHIP": 10,
+      "SPAM": 5,
+      "EDGE_CASES": 5
+    }
+  },
+  "emails": [
+    {
+      "id": 1,
+      "category": "BILLING",
+      "from": "Anna Kovács <anna.kovacs@startupxyz.com>",
+      "subject": "Invoice #1087 – incorrect amount",
+      "body": "Hello,\n\nI received invoice #1087 for April and the total shows €450, but my monthly membership plan is €350. There appears to be an extra charge of €100 that I don't recognise. Could you please review and send a corrected invoice or clarify what the additional charge is for?\n\nThank you,\nAnna",
+      "isVIP": true,
+      "expectedSentiment": "neutral",
+      "notes": "VIP domain (startupxyz.com is in VIP_EMAILS list)"
+    },
+    {
+      "id": 2,
+      "category": "BILLING",
+      "from": "Bence Molnár <bence.m@freelancer.io>",
+      "subject": "Payment confirmation needed",
+      "body": "Hi there,\n\nI made a bank transfer on 3rd March for my hot desk day pass (€15). I haven't received a receipt or confirmation yet. Could you confirm that the payment was received?\n\nRegards, Bence",
+      "isVIP": false,
+      "expectedSentiment": "neutral",
+      "notes": "Short, polite billing query"
+    },
+    {
+      "id": 3,
+      "category": "BILLING",
+      "from": "Claire Dupont <claire@remoteagency.fr>",
+      "subject": "Refund request – duplicate charge",
+      "body": "Good morning,\n\nI noticed that my credit card was charged twice in February – once on the 1st and again on the 3rd, both for €200 (my Flexi membership). I believe this is a billing error and would like a refund for one of the charges. Please let me know how to proceed.\n\nBest,\nClaire",
+      "isVIP": false,
+      "expectedSentiment": "neutral",
+      "notes": "Classic duplicate charge complaint with refund keyword"
+    },
+    {
+      "id": 4,
+      "category": "BILLING",
+      "from": "David Kim <d.kim@koreaglobal.com>",
+      "subject": "VAT invoice for company expenses",
+      "body": "Hello,\n\nI need a VAT invoice for my coworking subscription for Q1 2024. My company is registered for VAT and requires a proper tax document for expense reimbursement. Our VAT number is HU12345678. Could you send this to my email?\n\nThank you,\nDavid",
+      "isVIP": false,
+      "expectedSentiment": "neutral",
+      "notes": "VAT/tax document request – billing category"
+    },
+    {
+      "id": 5,
+      "category": "BILLING",
+      "from": "Eva Szabó <eva.szabo@design.hu>",
+      "subject": "Late fee question",
+      "body": "Hi,\n\nI see a late fee of €25 on my latest invoice. My payment was delayed because I was traveling, but I sent the transfer within the grace period mentioned in my contract. Can you waive this fee given the circumstances? I have been a member for 18 months without any previous late payments.",
+      "isVIP": false,
+      "expectedSentiment": "neutral",
+      "notes": "Late fee dispute – billing"
+    },
+    {
+      "id": 6,
+      "category": "BILLING",
+      "from": "Frank Weber <frank@austrian-consulting.at>",
+      "subject": "Direct debit failed – what to do?",
+      "body": "Hello,\n\nI received a notification that my direct debit failed this month. My bank changed my account number last week. How can I update my payment details and when will you retry the charge?\n\nFrank",
+      "isVIP": false,
+      "expectedSentiment": "neutral",
+      "notes": "Payment method update request"
+    },
+    {
+      "id": 7,
+      "category": "BILLING",
+      "from": "Grace Liu <grace.liu@ecommerce.sg>",
+      "subject": "Annual membership pricing",
+      "body": "Hi,\n\nI'm interested in switching from monthly to an annual plan. Could you tell me the annual price for the Dedicated Desk plan and whether I'd get a discount compared to paying monthly? I'd also like to know if I can transfer my remaining monthly days to the new plan.\n\nThanks, Grace",
+      "isVIP": false,
+      "expectedSentiment": "positive",
+      "notes": "Pricing enquiry – leans Billing due to price/discount keywords"
+    },
+    {
+      "id": 8,
+      "category": "BILLING",
+      "from": "Héctor Ramírez <hector@mexicotech.mx>",
+      "subject": "Re: Overdue invoice reminder",
+      "body": "Hello,\n\nI received your overdue invoice reminder but I already sent the payment by bank transfer on 10 April. Please check your records. My transaction reference is TXN-20240410-8832. If you still cannot locate it, let me know and I will send a bank statement.\n\nHéctor",
+      "isVIP": false,
+      "expectedSentiment": "neutral",
+      "notes": "Overdue payment dispute"
+    },
+    {
+      "id": 9,
+      "category": "BILLING",
+      "from": "Isabel Ferreira <isabel.f@lisbondigital.pt>",
+      "subject": "Discount code not working at checkout",
+      "body": "Hi,\n\nI received a promo code KAPTAR20 from the Budapest Digital Nomad event last week, but when I try to apply it at checkout it says 'invalid code'. Could you check if it's still valid and help me apply it to my first month?\n\nThank you, Isabel",
+      "isVIP": false,
+      "expectedSentiment": "neutral",
+      "notes": "Discount/promo code issue – billing"
+    },
+    {
+      "id": 10,
+      "category": "BILLING",
+      "from": "James O'Brien <james@dublinremote.ie>",
+      "subject": "Billing statement request",
+      "body": "Dear team,\n\nCould you please send me a complete billing statement for the period January–March 2024? I need it for my accountant. Preferably in PDF format with all transaction dates, descriptions and amounts.\n\nKind regards,\nJames O'Brien",
+      "isVIP": false,
+      "expectedSentiment": "neutral",
+      "notes": "Statement request"
+    },
+    {
+      "id": 11,
+      "category": "BOOKING",
+      "from": "Kata Horváth <kata.h@agencybudapest.hu>",
+      "subject": "Board room booking for 15 people – 20 June",
+      "body": "Hello,\n\nI'd like to book your largest conference room for a full-day workshop on 20 June. We expect around 15 participants. Does your Board Room accommodate that many? Please let me know the price and how to confirm the reservation.\n\nKata",
+      "isVIP": false,
+      "expectedSentiment": "neutral",
+      "notes": "Conference room booking enquiry"
+    },
+    {
+      "id": 12,
+      "category": "BOOKING",
+      "from": "Liam Murphy <liam.murphy@techstartup.ie>",
+      "subject": "Hot desk availability next week",
+      "body": "Hi,\n\nI'm visiting Budapest from Dublin next week (Mon 24 – Fri 28 June). Do you have hot desk availability for all 5 days? I'd prefer a spot near a window if possible. What time can I check in?\n\nLiam",
+      "isVIP": false,
+      "expectedSentiment": "neutral",
+      "notes": "Hot desk availability check"
+    },
+    {
+      "id": 13,
+      "category": "BOOKING",
+      "from": "Mia Chen <mia.chen@remoteco.com>",
+      "subject": "Cancelling my meeting room reservation",
+      "body": "Hello,\n\nI need to cancel my Focus Room reservation for tomorrow, 18 June at 2pm. The client meeting has been postponed. Will I receive a full refund or credit? Reference number is MR-2024-0891.\n\nThanks, Mia",
+      "isVIP": false,
+      "expectedSentiment": "neutral",
+      "notes": "Room cancellation with refund mention"
+    },
+    {
+      "id": 14,
+      "category": "BOOKING",
+      "from": "Noel Bergström <noel.b@stockholmventures.se>",
+      "subject": "Private office – 6-month block booking",
+      "body": "Hi,\n\nMy company is expanding our Budapest operations and we'd like to block-book a private office for 6 months (August–January). We need space for 4 people. Could you provide pricing and availability? We'd prefer a ground-floor or easily accessible space.\n\nNoel",
+      "isVIP": false,
+      "expectedSentiment": "neutral",
+      "notes": "Long-term office booking"
+    },
+    {
+      "id": 15,
+      "category": "BOOKING",
+      "from": "Olivia Patel <olivia.p@londondesign.co.uk>",
+      "subject": "Event space for product launch",
+      "body": "Dear Kaptar team,\n\nWe are planning a product launch event on 5 July for approximately 40 attendees. We'd need the event space from 6pm to 10pm, including AV equipment and a standing reception area. Is this possible? Could you send me a quote?\n\nOlivia Patel\nMarketing Director",
+      "isVIP": false,
+      "expectedSentiment": "positive",
+      "notes": "Event space for product launch"
+    },
+    {
+      "id": 16,
+      "category": "BOOKING",
+      "from": "Péter Varga <peter.varga@budapestlaw.hu>",
+      "subject": "Reschedule room booking to next Thursday",
+      "body": "Hello,\n\nCould you please move my Focus Room booking from Thursday 20 June (10am–12pm) to Thursday 27 June at the same time? Booking ref: FR-2024-0445. I hope the slot is still available.\n\nThank you,\nPéter",
+      "isVIP": false,
+      "expectedSentiment": "neutral",
+      "notes": "Reschedule existing booking"
+    },
+    {
+      "id": 17,
+      "category": "BOOKING",
+      "from": "Quin Zhang <quin.z@shanghaitech.cn>",
+      "subject": "Day pass for a group of 3",
+      "body": "Hi,\n\nMy colleagues and I (3 people total) will be in Budapest on 25 June and need day passes for that day. Do you offer group rates? We'd also need access to a printer. Please let me know how to book.\n\nQuin",
+      "isVIP": false,
+      "expectedSentiment": "neutral",
+      "notes": "Group day pass booking"
+    },
+    {
+      "id": 18,
+      "category": "BOOKING",
+      "from": "Rachel Hoffman <rachel.h@berlinfintech.de>",
+      "subject": "Check-in time for tomorrow",
+      "body": "Hello,\n\nI've booked a hot desk for tomorrow (19 June). What time does check-in open? I have a 7:30am call and would need to be settled by then. Is early access possible?\n\nRachel",
+      "isVIP": false,
+      "expectedSentiment": "neutral",
+      "notes": "Check-in enquiry"
+    },
+    {
+      "id": 19,
+      "category": "BOOKING",
+      "from": "Sam Adeyemi <sam.a@lagosglobal.ng>",
+      "subject": "Capacity of Focus Room",
+      "body": "Hi,\n\nWhat is the maximum capacity of your Focus Room? We're a team of 5 and need a quiet space for a 2-hour strategy session. If the Focus Room is too small, what's the next option?\n\nSam",
+      "isVIP": false,
+      "expectedSentiment": "neutral",
+      "notes": "Room capacity enquiry"
+    },
+    {
+      "id": 20,
+      "category": "BOOKING",
+      "from": "Tunde Fekete <tunde.fekete@marketingpro.hu>",
+      "subject": "Time slot availability – Saturday 22 June",
+      "body": "Hello,\n\nI know you're normally closed on Saturdays but I saw that you sometimes open for private bookings. Is there any availability on Saturday 22 June for a half-day workshop (9am–1pm, 8 participants)?\n\nTunde",
+      "isVIP": false,
+      "expectedSentiment": "neutral",
+      "notes": "Weekend booking enquiry"
+    },
+    {
+      "id": 21,
+      "category": "COMPLAINT",
+      "from": "Ursula Steiner <ursula.s@viennadesign.at>",
+      "subject": "Unacceptable noise levels this morning",
+      "body": "I need to formally complain about the noise level in the main coworking area this morning. There was a group of 8 people having a loud meeting right next to the quiet zone, and despite asking twice, nobody from staff intervened. This is completely unacceptable when I'm paying for a professional work environment. I expect a proper response and assurance this won't happen again.",
+      "isVIP": false,
+      "expectedSentiment": "negative",
+      "notes": "Noise complaint – clear complaint keywords"
+    },
+    {
+      "id": 22,
+      "category": "COMPLAINT",
+      "from": "Victor Russo <victor.russo@milanstudio.it>",
+      "subject": "Internet has been down for 3 hours",
+      "body": "This is ridiculous. The WiFi has been completely down since 9am and it's now noon. I have missed two important client calls because of this. Nobody at reception could tell me when it would be fixed. This is not acceptable for a coworking space that markets itself on reliable high-speed internet. I want to know what compensation will be offered for today.",
+      "isVIP": false,
+      "expectedSentiment": "negative",
+      "notes": "Service outage complaint with compensation request"
+    },
+    {
+      "id": 23,
+      "category": "COMPLAINT",
+      "from": "Wendy Park <wendy.p@seoulcreative.kr>",
+      "subject": "Dirty kitchen and toilets",
+      "body": "Hello,\n\nI want to raise a complaint about the cleanliness of the shared facilities. The kitchen was filthy when I arrived this morning – dirty cups left in the sink, coffee spilled on the counter. The toilets also hadn't been cleaned. As a paying member I expect a clean environment. Please address this immediately.\n\nWendy",
+      "isVIP": false,
+      "expectedSentiment": "negative",
+      "notes": "Cleanliness complaint"
+    },
+    {
+      "id": 24,
+      "category": "COMPLAINT",
+      "from": "Xavier Fontaine <xavier.f@paristech.fr>",
+      "subject": "Staff member was rude to me",
+      "body": "I am writing to complain about the behaviour of one of your staff members. When I arrived this morning and asked about my booking, the person at the front desk was dismissive and rude. This is not the kind of service I expect from a premium coworking space. I am considering cancelling my membership over this incident.",
+      "isVIP": false,
+      "expectedSentiment": "negative",
+      "notes": "Staff behaviour complaint"
+    },
+    {
+      "id": 25,
+      "category": "COMPLAINT",
+      "from": "Yasmin Al-Rashid <yasmin@dubaistartup.ae>",
+      "subject": "Projector broken – ruined my presentation",
+      "body": "Dear Kaptar,\n\nYour projector in the Board Room was not working during my presentation yesterday. Despite reporting this beforehand, no one resolved the issue in time. I had to present from a tiny laptop screen to 10 clients, which was deeply unprofessional. This reflects very poorly on your facilities. I expect compensation or at minimum a free future booking.",
+      "isVIP": false,
+      "expectedSentiment": "negative",
+      "notes": "Broken equipment complaint with compensation demand"
+    },
+    {
+      "id": 26,
+      "category": "COMPLAINT",
+      "from": "Zoltán Papp <zoltan.papp@debrecen.hu>",
+      "subject": "Worst experience – ignored for 20 minutes",
+      "body": "This is the worst experience I've had at any coworking space. I stood at reception for 20 minutes waiting to check in while two staff members chatted with each other. When I finally got help, I was given the wrong locker key. The whole morning was a disaster. I'm seriously considering escalating this to consumer protection authorities.",
+      "isVIP": false,
+      "expectedSentiment": "negative",
+      "notes": "Strong negative sentiment – escalation threat"
+    },
+    {
+      "id": 27,
+      "category": "COMPLAINT",
+      "from": "Amy Holden <amy.holden@manchestermedia.co.uk>",
+      "subject": "Re: My complaint from last week – still no response",
+      "body": "I emailed you 6 days ago about a billing error and have received absolutely no response. This is completely unprofessional. I am now very unhappy with your service. If I do not hear back within 24 hours I will be contacting my bank to dispute the charge and leaving a negative review on every platform I can find. This is disgraceful customer service.",
+      "isVIP": false,
+      "expectedSentiment": "negative",
+      "notes": "Escalation – no response complaint"
+    },
+    {
+      "id": 28,
+      "category": "COMPLAINT",
+      "from": "Brian Toth <brian.toth@entrepreneur.hu>",
+      "subject": "Air conditioning too cold – health concern",
+      "body": "Hello,\n\nI've complained to staff three times this week about the air conditioning being set to an extremely low temperature. It's so cold I've developed a sore throat. Other members have complained too. This is a health and safety issue. Please set the temperature to a comfortable level or provide alternative options.\n\nBrian",
+      "isVIP": false,
+      "expectedSentiment": "negative",
+      "notes": "Repeated complaint about facilities"
+    },
+    {
+      "id": 29,
+      "category": "COMPLAINT",
+      "from": "Carol Smith <carol.s@birminghambiz.co.uk>",
+      "subject": "Package lost by reception",
+      "body": "Dear team,\n\nI had an important business package delivered to your address last Tuesday. Reception signed for it but now nobody can find it. This package contained client contracts worth significant value. I am appalled that something this important could be lost. I need this resolved urgently or I will pursue legal action.",
+      "isVIP": false,
+      "expectedSentiment": "negative",
+      "notes": "Lost package – legal threat"
+    },
+    {
+      "id": 30,
+      "category": "COMPLAINT",
+      "from": "Dmitri Volkov <dmitri.v@moscowtech.ru>",
+      "subject": "Membership cancelled without notice",
+      "body": "I am furious. My membership access was cancelled this morning without any warning or communication. I had meetings scheduled and could not access the building. When I called, I was told there was a payment issue, but I never received any reminder or notice. This is completely unacceptable. I demand my access be restored immediately and an explanation for the lack of communication.",
+      "isVIP": false,
+      "expectedSentiment": "negative",
+      "notes": "Access revoked – furious customer"
+    },
+    {
+      "id": 31,
+      "category": "INFO_REQUEST",
+      "from": "Elena Rossi <elena.r@milan.it>",
+      "subject": "Do you offer day passes?",
+      "body": "Hello,\n\nI'll be in Budapest for a week on business and I'm wondering if you offer day passes without a long-term commitment. How much do they cost and what's included? Do I need to book in advance?\n\nThanks, Elena",
+      "isVIP": false,
+      "expectedSentiment": "neutral",
+      "notes": "Day pass enquiry"
+    },
+    {
+      "id": 32,
+      "category": "INFO_REQUEST",
+      "from": "Finn Andersen <finn.a@copenhagendesign.dk>",
+      "subject": "Parking information",
+      "body": "Hi,\n\nI drive to work and I'm wondering if Kaptar has dedicated parking or if there's a convenient car park nearby. How much does it cost? Is it safe?\n\nFinn Andersen",
+      "isVIP": false,
+      "expectedSentiment": "neutral",
+      "notes": "Parking enquiry"
+    },
+    {
+      "id": 33,
+      "category": "INFO_REQUEST",
+      "from": "Giulia Marino <giulia.m@romeagency.it>",
+      "subject": "Opening hours",
+      "body": "Buongiorno / Good morning,\n\nCould you please confirm your opening hours? I need to know the earliest time I can access the space and the latest I can stay. Do you have 24/7 access for any membership tier?\n\nGrazie, Giulia",
+      "isVIP": false,
+      "expectedSentiment": "neutral",
+      "notes": "Opening hours enquiry"
+    },
+    {
+      "id": 34,
+      "category": "INFO_REQUEST",
+      "from": "Hans Mueller <hans.m@frankfurtcorp.de>",
+      "subject": "Internet speed and reliability",
+      "body": "Hello,\n\nI work in video production and need reliable, fast internet for uploading large files. What is the internet speed at Kaptar? Is it dedicated or shared? Any SLA guarantees?\n\nHans",
+      "isVIP": false,
+      "expectedSentiment": "neutral",
+      "notes": "WiFi/internet speed enquiry"
+    },
+    {
+      "id": 35,
+      "category": "INFO_REQUEST",
+      "from": "Iris Nakamura <iris.n@tokyostartup.jp>",
+      "subject": "Do you offer virtual office services?",
+      "body": "Dear Kaptar team,\n\nI am setting up a European entity for my Japanese company and need a prestigious Budapest business address for mail and registration purposes. Do you provide virtual office services? What documents do you accept for company registration?\n\nIris Nakamura",
+      "isVIP": false,
+      "expectedSentiment": "neutral",
+      "notes": "Virtual office enquiry"
+    },
+    {
+      "id": 36,
+      "category": "INFO_REQUEST",
+      "from": "Jack O'Connor <jack.o@galwaytech.ie>",
+      "subject": "Can I bring my dog?",
+      "body": "Hi,\n\nI have a very well-behaved Golden Retriever and was wondering if Kaptar is pet-friendly. I work with him beside me every day and would love to bring him along if possible.\n\nJack",
+      "isVIP": false,
+      "expectedSentiment": "positive",
+      "notes": "Unusual/casual info request"
+    },
+    {
+      "id": 37,
+      "category": "INFO_REQUEST",
+      "from": "Karin Svensson <karin.s@goteborg.se>",
+      "subject": "Printing and scanning facilities",
+      "body": "Hello,\n\nI frequently need to print contracts and scan documents. What printing/scanning facilities does Kaptar offer? Is there a limit on pages? What's the cost per page above the limit?\n\nKarin",
+      "isVIP": false,
+      "expectedSentiment": "neutral",
+      "notes": "Facilities enquiry – printing"
+    },
+    {
+      "id": 38,
+      "category": "INFO_REQUEST",
+      "from": "Leo Martínez <leo.m@barcelonadesign.es>",
+      "subject": "Are there showers?",
+      "body": "Hola,\n\nI cycle to work and was wondering if Kaptar has shower facilities? Also, is there secure bicycle storage?\n\nLeo",
+      "isVIP": false,
+      "expectedSentiment": "neutral",
+      "notes": "Facilities enquiry – showers and bike storage"
+    },
+    {
+      "id": 39,
+      "category": "INFO_REQUEST",
+      "from": "Maria Santos <maria.s@lisboafreelance.pt>",
+      "subject": "How do I book a tour?",
+      "body": "Hello,\n\nI'd love to visit Kaptar before committing to a membership. How can I arrange a tour? Are there specific days/times available? Can I try working there for a day first?\n\nMaria",
+      "isVIP": false,
+      "expectedSentiment": "positive",
+      "notes": "Tour/visit request"
+    },
+    {
+      "id": 40,
+      "category": "INFO_REQUEST",
+      "from": "Nathan Brooks <nathan.b@sydneyremote.au>",
+      "subject": "What amenities are included?",
+      "body": "Hi,\n\nI'm considering a hot desk membership. Could you list all the amenities that are included? I'm particularly interested in whether coffee, phone booths, lockers and event access are included in the base price.\n\nNathan",
+      "isVIP": false,
+      "expectedSentiment": "neutral",
+      "notes": "General amenities enquiry"
+    },
+    {
+      "id": 41,
+      "category": "MEMBERSHIP",
+      "from": "Orsolya Kiss <orsolya.k@budapeststartup.hu>",
+      "subject": "Upgrading from Flexi to Dedicated Desk",
+      "body": "Hi,\n\nI've been a Flexi member for 3 months and I'd like to upgrade to a Dedicated Desk plan. Can I do this mid-month and if so, will my billing date change? Will there be a new contract to sign?\n\nOrsolya",
+      "isVIP": false,
+      "expectedSentiment": "neutral",
+      "notes": "Plan upgrade enquiry"
+    },
+    {
+      "id": 42,
+      "category": "MEMBERSHIP",
+      "from": "Patrick Brennan <patrick.b@dublinconsulting.ie>",
+      "subject": "Cancel my membership – moving cities",
+      "body": "Hello,\n\nUnfortunately I'm moving back to Dublin next month and won't be able to continue my membership. I'd like to cancel as of 1 July. Can you confirm the notice period and what my final bill will be?\n\nThank you,\nPatrick",
+      "isVIP": false,
+      "expectedSentiment": "neutral",
+      "notes": "Membership cancellation request"
+    },
+    {
+      "id": 43,
+      "category": "MEMBERSHIP",
+      "from": "Rhea Patel <rhea.p@londonlaw.co.uk>",
+      "subject": "Membership renewal – want to negotiate terms",
+      "body": "Dear Kaptar team,\n\nMy annual membership is up for renewal next month. I've been a loyal member for 2 years. I'd like to discuss renewing but I'm seeing better prices at a competitor. Can we schedule a call to discuss my options?\n\nRhea",
+      "isVIP": false,
+      "expectedSentiment": "neutral",
+      "notes": "Renewal negotiation"
+    },
+    {
+      "id": 44,
+      "category": "MEMBERSHIP",
+      "from": "Soren Lindqvist <soren.l@stockholmlaw.se>",
+      "subject": "Starting a free trial",
+      "body": "Hi,\n\nI'd like to start a free trial to evaluate whether Kaptar suits my needs. I'm a freelance lawyer and need a professional environment and occasional meeting rooms. How do I sign up and what's included in the trial?\n\nSoren",
+      "isVIP": false,
+      "expectedSentiment": "positive",
+      "notes": "Free trial sign-up request"
+    },
+    {
+      "id": 45,
+      "category": "MEMBERSHIP",
+      "from": "Teresa García <teresa.g@madridmedia.es>",
+      "subject": "Team membership for 6 people",
+      "body": "Hello,\n\nMy company is growing and we need 6 desks. Do you offer team or corporate membership packages? We need 24/7 access, dedicated desks, and regular meeting room usage. Please send pricing options.\n\nTeresa",
+      "isVIP": false,
+      "expectedSentiment": "positive",
+      "notes": "Corporate/team membership enquiry"
+    },
+    {
+      "id": 46,
+      "category": "MEMBERSHIP",
+      "from": "Umar Hassan <umar.h@karachicorp.pk>",
+      "subject": "What is the notice period for terminating my contract?",
+      "body": "Good morning,\n\nI signed up for a 6-month membership and I'm now considering terminating early. What is the notice period? Are there any early termination fees?\n\nUmar Hassan",
+      "isVIP": false,
+      "expectedSentiment": "neutral",
+      "notes": "Notice period / early termination query"
+    },
+    {
+      "id": 47,
+      "category": "MEMBERSHIP",
+      "from": "Veronika Szabó <veronika.sz@debrecen.hu>",
+      "subject": "Benefits of the Pro membership plan",
+      "body": "Hello,\n\nI'm considering the Pro plan for myself and a colleague. Could you detail all the benefits that come with it? Specifically I'm interested in storage, guest passes, and whether it includes the event space.\n\nVeronika",
+      "isVIP": false,
+      "expectedSentiment": "neutral",
+      "notes": "Plan benefits enquiry"
+    },
+    {
+      "id": 48,
+      "category": "MEMBERSHIP",
+      "from": "Will Turner <will.t@edinburghtech.co.uk>",
+      "subject": "Pausing my membership for 2 months",
+      "body": "Hi,\n\nI'm going on sabbatical for July and August. Is it possible to pause my Dedicated Desk membership for 2 months? I'd like to keep my desk and locker but not pay full price while I'm away.\n\nWill",
+      "isVIP": false,
+      "expectedSentiment": "neutral",
+      "notes": "Membership pause request"
+    },
+    {
+      "id": 49,
+      "category": "MEMBERSHIP",
+      "from": "Xiaoming Wu <xiaoming.w@beijingtech.cn>",
+      "subject": "Transferring membership to a colleague",
+      "body": "Hello,\n\nI'm leaving Budapest in 3 weeks but my colleague Zhang Wei would like to take over my Dedicated Desk plan. Is membership transfer possible? Do you charge an admin fee?\n\nXiaoming",
+      "isVIP": false,
+      "expectedSentiment": "neutral",
+      "notes": "Membership transfer request"
+    },
+    {
+      "id": 50,
+      "category": "MEMBERSHIP",
+      "from": "Yael Cohen <yael.c@tel-avivdigital.il>",
+      "subject": "Monthly vs annual plan – which is better value?",
+      "body": "Hi,\n\nI'm a freelance developer and I'm not sure how long I'll stay in Budapest. Can you break down the total cost for monthly vs annual plans for the Flexi tier? I want to know the break-even point.\n\nYael",
+      "isVIP": false,
+      "expectedSentiment": "neutral",
+      "notes": "Plan comparison / pricing analysis"
+    },
+    {
+      "id": 51,
+      "category": "SPAM",
+      "from": "deals@superoffers247.com",
+      "subject": "LIMITED TIME OFFER – Click here now!!!",
+      "body": "Dear Friend,\n\nCONGRATULATIONS! You have been selected as a WINNER of our exclusive prize draw. Click here NOW to claim your FREE gift. Limited time offer – act now before it expires!\n\nUnsubscribe | Opt out",
+      "isVIP": false,
+      "expectedSentiment": "positive",
+      "notes": "Classic promotional spam"
+    },
+    {
+      "id": 52,
+      "category": "SPAM",
+      "from": "marketing@weightlossmiracle.net",
+      "subject": "Lose 20kg in 30 days – 100% guaranteed!",
+      "body": "Amazing weight loss breakthrough! 100% free trial. No obligation. Guaranteed results or your money back. Click here to claim your free bottle. Risk free offer.",
+      "isVIP": false,
+      "expectedSentiment": "positive",
+      "notes": "Health/weight loss spam"
+    },
+    {
+      "id": 53,
+      "category": "SPAM",
+      "from": "prince.akin@legacy-transfer.ng",
+      "subject": "Confidential Business Proposal – Inheritance",
+      "body": "Dear Friend,\n\nI am Prince Akin, son of the late General Ibrahim. I have an inheritance of $45 million USD to transfer. I need a trusted partner to help me. You will receive 30% commission. This is completely risk free and legal. Please reply urgently.",
+      "isVIP": false,
+      "expectedSentiment": "neutral",
+      "notes": "419 advance-fee fraud"
+    },
+    {
+      "id": 54,
+      "category": "SPAM",
+      "from": "earnings@workfromhomepro.biz",
+      "subject": "Earn €5000/month working from home",
+      "body": "Work from home and earn money fast! Make €5000 per month from home. No experience needed. Guaranteed income. Click here to learn more. Bulk email. Unsubscribe to opt out.",
+      "isVIP": false,
+      "expectedSentiment": "positive",
+      "notes": "Work-from-home income scam"
+    },
+    {
+      "id": 55,
+      "category": "SPAM",
+      "from": "casino-bonus@luckyspins.com",
+      "subject": "500 FREE SPINS – Claim before midnight!",
+      "body": "You have been selected to receive 500 FREE casino spins! Click here to claim. No deposit required. Play slots, blackjack and roulette. 18+. Gambling can be addictive.",
+      "isVIP": false,
+      "expectedSentiment": "positive",
+      "notes": "Online casino spam"
+    },
+    {
+      "id": 56,
+      "category": "BILLING",
+      "from": "Adam Novák <adam.n@brnotech.cz>",
+      "subject": "Double charge AND broken printer",
+      "body": "I am writing about two separate issues. First, I was charged twice for my invoice last month and want a refund. Second, the printer has been broken for a week and nobody has fixed it, which is completely unacceptable. I am very frustrated with the service quality.",
+      "isVIP": false,
+      "expectedSentiment": "negative",
+      "secondaryCategory": "COMPLAINT",
+      "notes": "EDGE CASE: Multi-topic (Billing + Complaint). Primary should be Billing due to invoice/refund weight."
+    },
+    {
+      "id": 57,
+      "category": "BOOKING",
+      "from": "Beth Carter <beth.c@brightonfreelance.co.uk>",
+      "subject": "Event space enquiry and booking",
+      "body": "Hello,\n\nI'd like to find out more about your event space – what's the maximum capacity, does it have AV equipment, and is catering allowed? I'm also interested in booking it for Saturday 29 June if available. Can you confirm and provide a quote?\n\nBeth",
+      "isVIP": false,
+      "expectedSentiment": "neutral",
+      "secondaryCategory": "INFO_REQUEST",
+      "notes": "EDGE CASE: Multi-topic (Booking + Info Request)"
+    },
+    {
+      "id": 58,
+      "category": "COMPLAINT",
+      "from": "Dan O'Malley <dan.om@corkdigital.ie>",
+      "subject": "Oh great – the wifi is down again",
+      "body": "Oh wonderful, the WiFi is down again for the third time this week. Brilliant management as usual. The connection has been absolutely terrible lately and clearly nobody cares to fix it properly. What a great coworking space this is turning out to be.",
+      "isVIP": false,
+      "expectedSentiment": "negative",
+      "isSarcastic": true,
+      "notes": "EDGE CASE: Sarcasm – positive words but clearly a complaint"
+    },
+    {
+      "id": 59,
+      "category": "BILLING",
+      "from": "Emi Tanaka <emi.t@osaka.jp>",
+      "subject": "Invoice",
+      "body": "Hi, where is my invoice for June? Thanks",
+      "isVIP": false,
+      "expectedSentiment": "neutral",
+      "notes": "EDGE CASE: Very short email – minimal signal"
+    },
+    {
+      "id": 60,
+      "category": "COMPLAINT",
+      "from": "Karen Walsh <karen.w@legal.ie>",
+      "subject": "Legal notice – breach of contract",
+      "body": "Dear Kaptar,\n\nDespite multiple attempts to resolve this billing dispute, I have received no satisfactory response. I am now engaging my solicitor and intends to pursue this through the courts if the refund of €350 is not issued within 7 days. Please be advised that this email constitutes formal notice.\n\nKaren Walsh, Solicitor",
+      "isVIP": false,
+      "expectedSentiment": "negative",
+      "notes": "EDGE CASE: Legal threat – Complaint with Billing secondary. High urgency."
+    }
+  ]
+}
