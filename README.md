@@ -39,6 +39,7 @@ Google Apps Script system that:
 - Safe testing protocols to avoid rate limiting
 
 ## 📁 Project Structure
+
 ```
 ├── Code.gs              # Main processing logic and menu
 ├── Config.gs            # Configuration and categories
@@ -85,10 +86,12 @@ Google Apps Script system that:
    - Replace `YOUR_GEMINI_API_KEY_HERE` with your actual API key
    - Save
 
-6. **Update email address in EmailGenerator.gs**
-   - Find `YOUR_EMAIL@gmail.com` (appears in 2 functions)
-   - Replace with your actual email
-   - Save
+6. **Update email addresses**
+   - Open Code.gs, find line 67
+   - Replace `YOUR_EMAIL@gmail.com` with your actual email
+   - Open EmailGenerator.gs, find lines with `YOUR_EMAIL@gmail.com` (appears twice)
+   - Replace both with your actual email
+   - Save both files
 
 7. **Run setup**
    - Close and reopen the Google Sheet
@@ -135,6 +138,28 @@ Google Apps Script system that:
 - Error handling and graceful fallbacks
 - OAuth scope management
 
+## 🔧 Troubleshooting
+
+### Email processing finds 0 emails
+- Make sure test emails are marked as **unread** (bold in Gmail)
+- Check that the search filter in Code.gs matches your email address
+- Verify emails aren't already labeled "✅ Processed"
+
+### Character encoding issues (�� symbols)
+- Ensure `charset=UTF-8` is in HTML body
+- Avoid using emoji flags in email subjects
+- Use plain text fallback
+
+### AI not working
+- Verify Gemini API key is set correctly in Config.gs
+- Check API key is active: https://aistudio.google.com/app/apikey
+- System will fall back to keyword matching if AI fails
+
+### Labels not applied
+- Run Setup Labels first
+- Check Gmail permissions are granted
+- Look for error messages in View > Logs
+
 ## 🎓 Built For
 
 Internship application portfolio demonstrating:
@@ -151,8 +176,7 @@ MIT License - Feel free to use for learning or adapt for your own projects
 ## 🙋 Author
 
 **Lilla Szulyovszky**
-- Portfolio: [Your portfolio URL]
-- LinkedIn: [Your LinkedIn]
+- GitHub: [@lillaszulyovszky](https://github.com/lillaszulyovszky)
 - Email: lilla.szulyovszky@gmail.com
 
 ---
